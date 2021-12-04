@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Regular Expressions/Form Checking</title>
+<style>
+	body {font-family: arial; color: black; font-style: normal}
+	.errorText {font-family: arial; color: red; font-style: italic}
+
+</style>
+<!--https://regex101.com -->
+<!--http://regexpal.com/-->
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+			document.getElementById("btnCheck").addEventListener("click", checkForm);
+	}//end of load function
+);//end of load listener
+
+
+	
+	//global because we'll be using these variables in two different functions
+	let someName;
+	let myFile; 
+	let myPhone;
+	let theEmail;
+	let doorSelection;
+	let myIcecream;
+	let mistakes;
+	
+	function checkForm() {
+
+		
+	}//end of checkForm function
+	
+
+	function makeCookies() {
+
+
+	}//end of makeCookies function
+	/*
+	Advantages and disadvantages of cookies:
+	
+    ADVANTAGES
+1. Cookies do not require any server resources since they are stored on the client. 
+2. Cookies are easy to implement. 
+3. You can configure cookies to expire when the browser session ends (session cookies) or they can exist for a specified length of time on the client computer (persistent cookies). 
+
+    DISADVANTAGES
+1. Users can delete a cookie file (.txt file). 
+2. User's browser can refuse cookies,so your code has to anticipate that possibility. 
+3. Cookies exist as plain text on the client machine and they may pose a possible security risk as anyone can open and tamper with cookies
+
+*/
+	/*
+	OTHER NOTES ABOUT COOKIES
+	1. There will only be ONE .txt file created per domain
+	2. Some browsers will limit then number of cookies from that domain to 20. But some browsers accept 30 and up to 180 cookies.
+	3. Each document.cookie is one cookie
+	4. Each document.cookie is limited to 4kb and that includes the expiration date. Cookies in excess of 4kb will be trimmed.
+	5. If more than that MAX number of cookies are written from one domain, the oldest one will be replaced.
+	6. A given browser will store a maximum of 300 .txt files from all domains (some will store more)
+	7. Cookie data can only be read by the domain that saved the cookie data.
+	//these are HTTP standards but different browsers can choose to exceed the limits.
+	*/
+</script>
+</head>
+<body>
+	<form name="myForm">
+		Please enter your name<br>
+		<input type="text" id="aName">
+        <span id="aNameError" class="errorText"></span>
+        <br><br>
+		
+		Enter a file name with a gif or jpg extension<br><span style="font-size: 11px">(file name may only consist of letters, numbers, and underscores.<br>No spaces allowed in the file name)</span><br>
+		<input type="text" id="extension"><span id="extensionError" class="errorText"></span><br><br>
+		
+		<span>Please enter your phone number</span><br>
+        <span style="font-size: 11px" id="phoneError">xxx-xxx-xxxx or (xxx) xxx-xxxx</span><br>
+		<input type="text" id="phone" size="15"><br><br>
+		
+		Please enter your email address<br>
+		<input type="text" id="email" size="15"><br><br>
+		
+        Please choose between door 1A through 1D.<br>
+        Enter the chosen value then enter one special character after it (for example 1D# or 1A* sign)<br>
+        <input type="text" id="door" size="5"><br><br>
+		
+		Which is your favorite Ben &amp; Jerry's Ice Cream?<br>
+		<select id="icecream">
+			<option value="select">Select from the Menu</option>
+			<option value="Americone Dream">Americone Dream</option>
+			<option value="Phish Food">Phish Food</option>
+			<option value="Strawberry Cheesecake">Strawberry Cheesecake</option>
+			<option value="Half Baked">Half Baked</option>
+			<option value="Peanut Butter Cup">Peanut Butter Cup</option>
+			<option value="Cherry Garcia">Cherry Garcia</option>
+		</select><br><br>
+		
+		<input type="button" value="Submit" id="btnCheck">
+	</form>
+</body>
+</html>
+
+
+
