@@ -8,6 +8,11 @@
 //for Chrome, cookies won't work locally. You have to test from a web server. Test using any browser except for Chrome.
 	document.addEventListener("DOMContentLoaded", function() {
 	
+		const cookieSplitter = decodeURI(document.cookie);
+		const myCookiePieces = cookieSplitter.split('');
+		const someName = myCookiePieces[0];
+
+		document.getElementById("div1").innerHTML = someName;
 	
 	}//end of load function
 );//end of load listener

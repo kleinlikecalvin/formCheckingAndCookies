@@ -22,20 +22,59 @@ document.addEventListener("DOMContentLoaded", function() {
 	
 	//global because we'll be using these variables in two different functions
 	let someName;
-	let myFile; 
-	let myPhone;
-	let theEmail;
-	let doorSelection;
-	let myIcecream;
+	// let myFile; 
+	// let myPhone;
+	// let theEmail;
+	// let doorSelection;
+	// let myIcecream;
 	let mistakes;
 	
 	function checkForm() {
 
 		
+		someName = document.getElementById("aName").value;
+
+		if(someName == "") {
+
+			alert("Nah brah");
+			document.getElementById("aNameError").innerHTML = "Please do right";
+			mistakes = true;
+
+		} else {
+
+			mistakes = false;
+
+		}
+		
+		if (mistakes == false) {
+
+			alert("Let's make some cookies");
+			makeCookies();
+
+		}
 	}//end of checkForm function
 	
 
 	function makeCookies() {
+
+		const cookieIngredients = someName;
+
+		//each letter = 1 byte and a document.cookie can house 4kb/4000bytes
+		//expires=" + ["Day, numOfDay-firstThreeOfMonth-fourDigitYear 00:00:00 GMT"]'";
+		document.cookie = encodeURI(cookieIngredients) + '; sameSite= Strict; expires=' + ["Tuesday, 10-Jan-2023 10:00:00 GMT"];
+		//stores in a .txt file
+
+		//can do multiple cookies this would be cookie number 2
+		// document.cookie = encodeURI(other);
+
+		document.location = "cookieData.htm";
+
+		//If you don't specify an expiration date for the doc.cookie then the cookie is a session cookie and is only alive until the browser is closed. Those with an exp date are referred to as persistent and with stay until it either expires or the user deletes their browser history.
+
+		//if you don't set your same site attr to strict then cross site request forgery is too easy without it
+		//cookies are sent in a first party context and will not be initiated with request for third party sites aka it only allows the domain that set the cookie to access it
+
+		//good explanation @ https://web.dev/samesite-cookies-explained/
 
 
 	}//end of makeCookies function
