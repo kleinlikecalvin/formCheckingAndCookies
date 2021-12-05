@@ -13,6 +13,7 @@
 <!--http://regexpal.com/-->
 <script>
 
+
 document.addEventListener("DOMContentLoaded", function() {
 			document.getElementById("btnCheck").addEventListener("click", checkForm);
 	}//end of load function
@@ -48,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		
 		if (mistakes == false) {
 
-			alert("Let's make some cookies");
 			makeCookies();
 
 		}
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		//each letter = 1 byte and a document.cookie can house 4kb/4000bytes
 		//expires=" + ["Day, numOfDay-firstThreeOfMonth-fourDigitYear 00:00:00 GMT"]'";
-		document.cookie = encodeURI(cookieIngredients) + '; sameSite= Strict; expires=' + ["Tuesday, 10-Jan-2023 10:00:00 GMT"];
+		document.cookie = encodeURI(cookieIngredients) + "; sameSite= Strict; expires=Tuesday, 10-Jan-2023 10:00:00 GMT";
 		//stores in a .txt file
 
 		//can do multiple cookies this would be cookie number 2
